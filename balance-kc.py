@@ -57,7 +57,6 @@ def main():
     # Check only assets with existing balance
     if (float(account.get('balance')) > 0):
       print(f"holding of {account.get('currency')} has balance of {account.get('balance')} with market price ${price_dict.get(account.get('currency'))}")
-      # print(f"{price_dict.get(account.get('currency'))}")
       asset_value = float(account.get('balance')) * float(price_dict.get(account.get('currency')))
       total_asset_values += asset_value
 
