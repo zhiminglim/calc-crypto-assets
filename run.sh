@@ -6,4 +6,4 @@ set -a
 source config.env
 set +a
 
-python balance-kc.py
+python balance-kc.py > output.txt

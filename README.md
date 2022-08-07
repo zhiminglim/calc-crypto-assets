@@ -28,12 +28,15 @@ There are also some libraries used in the python script which you may need to do
 $ pip install time hmac hashlib base64 requests json
 ```
 
-Next, run `chmod +x run.sh` to ensure you have execute privileges. Once done, execute `./run.sh` from your CLI.
+Next, run `chmod +x run.sh` to ensure you have execute privileges. Once done, execute `./run.sh` from your CLI. The outputs will be saved into a `output.txt` file in the same directory.
 
 Example output:
 
 ```shell
 $ ./run.sh 
+
+current datetime: 2022-08-07 14:25:47
+
 Initializing main function...
 response code=200 when hitting /api/v1/prices
 response code=200 when hitting /api/v1/accounts
@@ -41,6 +44,7 @@ response code=200 when hitting /api/v1/accounts
 Computing sum of all asset values...
 holding of XNO has balance of 10.0000000 with market price $1.03870770
 holding of USDT has balance of 333.12345678 with market price $1.00020000
+
 total asset values (USD) = $xxx.xxx
 ```
 

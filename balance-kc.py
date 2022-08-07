@@ -5,6 +5,7 @@ import base64
 import requests
 import json
 import os
+import datetime
 
 # Import env variables
 API_KEY = os.environ.get('API_KEY')
@@ -14,6 +15,7 @@ BASEURL = os.environ.get('BASEURL')
 
 # Initialize global epoch timestamp (current) in ms
 now = int(time.time() * 1000)
+print(f"current datetime: {datetime.datetime.fromtimestamp(now/1000).strftime('%Y-%m-%d %H:%M:%S')}")
 
 ###############################
 ### Define helper functions ###
@@ -45,7 +47,7 @@ def getResource(api):
 ### Define a main function to run ###
 #####################################
 def main():
-  print(f"Initializing main function...")
+  print("\nInitializing main function...")
   price_dict = getResource(api='/api/v1/prices')
   account_list = getResource(api='/api/v1/accounts')
   
@@ -60,7 +62,7 @@ def main():
       asset_value = float(account.get('balance')) * float(price_dict.get(account.get('currency')))
       total_asset_values += asset_value
 
-  print(f"total asset values (USD) = ${total_asset_values}")
+  print(f"\ntotal asset values (USD) = ${total_asset_values}")
 
 
 #############################
